@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   def current_shouts
     shouts.current
   end
+
+  def follow(followed_user)
+    followed_users << followed_user
+  end
 end
