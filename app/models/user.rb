@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   def follow(followed_user)
     followed_users << followed_user
   end
+
+  def can_follow?(followed_user)
+    followed_users.includes? followed_user && followed_user != email
+  end
 end
