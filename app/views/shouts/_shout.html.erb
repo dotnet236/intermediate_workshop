@@ -1,7 +1,7 @@
 <div>
   <%= content_tag_for(:div, shout) do %>
-    <%= shout.user_email %>
+    <%= link_to shout.user_email, shout.user %>
     <%= shout.body %>
-    <%= time_ago_in_words(shout.created_at) %> ago
+    <%= link_to time_ago_in_words(shout.created_at), shout %> ago
   <% end %>
 </div>
